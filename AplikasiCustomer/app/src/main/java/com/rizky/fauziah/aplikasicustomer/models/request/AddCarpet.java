@@ -3,6 +3,8 @@ package com.rizky.fauziah.aplikasicustomer.models.request;
 import com.google.gson.annotations.SerializedName;
 
 public class AddCarpet {
+    @SerializedName("id")
+    private int id;
     @SerializedName("color_of_carpet")
     private String colorOfCarpet;
     @SerializedName("type_of_carpet")
@@ -17,6 +19,8 @@ public class AddCarpet {
     private String note = "";
     @SerializedName("customer_name")
     private String customerName;
+    @SerializedName("customer_id")
+    private String customer_id;
 
     public AddCarpet() {
     }
@@ -27,6 +31,22 @@ public class AddCarpet {
         this.lengthOfCarpet = lengthOfCarpet;
         this.widthOfCarpet = widthOfCarpet;
         this.customerName = customerName;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getCustomer_id() {
+        return customer_id;
+    }
+
+    public void setCustomer_id(String customer_id) {
+        this.customer_id = customer_id;
     }
 
     public String getColorOfCarpet() {

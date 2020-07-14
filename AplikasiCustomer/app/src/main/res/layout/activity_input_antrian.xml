@@ -43,20 +43,29 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
-    <EditText
-        android:id="@+id/tv_inputmotor_plat"
-        android:layout_width="wrap_content"
+    <Spinner
+        android:id="@+id/spinner_license"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="8dp"
-        android:backgroundTint="@color/startGradientColor"
-        android:ems="12"
-        android:inputType="text"
-        android:maxLines="1"
-        android:textCursorDrawable="@color/startGradientColor"
+        android:layout_marginTop="12dp"
+        android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nama_plat" />
+<!--    <EditText-->
+<!--        android:id="@+id/tv_inputmotor_plat"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:layout_marginStart="24dp"-->
+<!--        android:layout_marginTop="8dp"-->
+<!--        android:backgroundTint="@color/startGradientColor"-->
+<!--        android:ems="12"-->
+<!--        android:inputType="text"-->
+<!--        android:maxLines="1"-->
+<!--        android:textCursorDrawable="@color/startGradientColor"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/nama_plat" />-->
 
     <TextView
         android:id="@+id/tipe_cuci"
@@ -68,7 +77,7 @@
         android:textColor="@color/endGradientColor"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_inputmotor_plat" />
+        app:layout_constraintTop_toBottomOf="@+id/spinner_license" />
 
     <Spinner
         android:id="@+id/txt_wash_type"

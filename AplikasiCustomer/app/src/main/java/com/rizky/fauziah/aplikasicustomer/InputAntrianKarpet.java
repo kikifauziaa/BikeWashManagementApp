@@ -13,6 +13,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -24,28 +25,33 @@ import com.google.gson.Gson;
 import com.rizky.fauziah.aplikasicustomer.antrian.Antrian;
 import com.rizky.fauziah.aplikasicustomer.models.Customer;
 import com.rizky.fauziah.aplikasicustomer.models.request.AddBikeQueue;
+import com.rizky.fauziah.aplikasicustomer.models.request.AddCarpet;
 import com.rizky.fauziah.aplikasicustomer.models.request.AddCarpetQueue;
 import com.rizky.fauziah.aplikasicustomer.notifikasi.Notifikasi;
 import com.rizky.fauziah.aplikasicustomer.utilities.ApiClient;
 import com.rizky.fauziah.aplikasicustomer.utilities.SessionManager;
 import com.rizky.fauziah.aplikasicustomer.utilities.interfaces.ApiCallInterface;
 
+import java.util.List;
+
 public class InputAntrianKarpet extends AppCompatActivity {
     //setelah input antrian karpet, antrian muncul di layout antrian
-    private EditText carpetColor, customerName;
-    private Spinner carpetType, washType;
+    private EditText customerName;
+    private Spinner carpetType, washType, carpetColor;
     private Button btnSubmit;
     private TextView cekkarpet;
+    private List<AddCarpet> colorList;
 
     @Override
     protected void onCreate (Bundle savedInstanceState) {
         super.onCreate (savedInstanceState);
         setContentView (R.layout.activity_input_antrian_karpet);
 
-        carpetColor = findViewById(R.id.txt_color_carpet);
+        carpetColor = findViewById(R.id.spinner_carpet_color);
         carpetType = findViewById(R.id.spinner_type_carpet);
         washType = findViewById(R.id.spinner_wash_carpet);
         btnSubmit = findViewById(R.id.btn_submit_carpet_queue);
+        carpetColor.setEnabled(false);
 
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -64,6 +70,7 @@ public class InputAntrianKarpet extends AppCompatActivity {
             }
         });
 
+        prepareData();
     }
 
     @Override
@@ -92,15 +99,9 @@ public class InputAntrianKarpet extends AppCompatActivity {
         Gson gson = new Gson();
         Customer c = gson.fromJson(s.getString(SessionManager.Key.USER_DATA), Customer.class);
 
-        String color = carpetColor.getText().toString();
+        String color = colorList.get(carpetColor.getSelectedItemPosition()).getColorOfCarpet();
         String type = carpetType.getSelectedItem().toString();
         String wash = washType.getSelectedItem().toString();
-
-        if(TextUtils.isEmpty(color)) {
-            carpetColor.setError("Nomor plat motor wajib diisi");
-            carpetColor.requestFocus();
-            return;
-        }
 
         ProgressDialog dialog = new ProgressDialog(this);
         dialog.setCancelable(false);
@@ -135,6 +136,45 @@ public class InputAntrianKarpet extends AppCompatActivity {
                 dialog.dismiss();
                 Log.e(InputAntrian.class.getSimpleName(), t.getMessage());
                 Snackbar.make(findViewById(android.R.id.content), "Antrian gagal, pastikan data karpet terdaftar "+ t.getMessage(), Snackbar.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    private void prepareData() {
+        SessionManager session = new SessionManager(getApplicationContext());
+        Gson gson = new Gson();
+        Customer c = gson.fromJson(session.getString(SessionManager.Key.USER_DATA), Customer.class);
+        ApiCallInterface apiClient = ApiClient.getClient().create(ApiCallInterface.class);
+        Call<List<AddCarpet>> call = apiClient.getCustomerCarpets(String.valueOf(c.getId()));
+
+        String[] colors = {};
+
+        call.enqueue(new Callback<List<AddCarpet>>() {
+            @Override
+            public void onResponse(Call<List<AddCarpet>> call, Response<List<AddCarpet>> response) {
+                colorList = response.body();
+
+                for(int i = 0; i < colorList.size(); i++) {
+                    colors[i] = String.format("%d. %s, %s x %s",
+                            (i+1),
+                            colorList.get(i).getColorOfCarpet(),
+                            colorList.get(i).getLengthOfCarpet(),
+                            colorList.get(i).getWidthOfCarpet());
+                }
+
+                ArrayAdapter<String> adapter = new ArrayAdapter<String>(
+                        InputAntrianKarpet.this,
+                        android.R.layout.simple_spinner_item,
+                        colors);
+
+                adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                carpetColor.setAdapter(adapter);
+                adapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onFailure(Call<List<AddCarpet>> call, Throwable t) {
+
             }
         });
     }

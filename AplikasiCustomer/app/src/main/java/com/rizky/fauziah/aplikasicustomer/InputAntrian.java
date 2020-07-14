@@ -14,6 +14,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -21,27 +22,34 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.snackbar.Snackbar;
+import com.google.gson.Gson;
 import com.rizky.fauziah.aplikasicustomer.antrian.Antrian;
 import com.rizky.fauziah.aplikasicustomer.login.Login;
+import com.rizky.fauziah.aplikasicustomer.models.Customer;
+import com.rizky.fauziah.aplikasicustomer.models.request.AddBike;
 import com.rizky.fauziah.aplikasicustomer.models.request.AddBikeQueue;
+import com.rizky.fauziah.aplikasicustomer.models.request.AddCarpet;
 import com.rizky.fauziah.aplikasicustomer.notifikasi.Notifikasi;
 import com.rizky.fauziah.aplikasicustomer.register.Register;
 import com.rizky.fauziah.aplikasicustomer.utilities.ApiClient;
+import com.rizky.fauziah.aplikasicustomer.utilities.SessionManager;
 import com.rizky.fauziah.aplikasicustomer.utilities.interfaces.ApiCallInterface;
+
+import java.util.List;
 
 public class InputAntrian extends AppCompatActivity {
     //setelah input antrian motor, antrian muncul di layout antrian
-    private EditText licensePlate;
-    private Spinner washType;
+    private Spinner washType, spinnerLicense;
     private Button btnSubmit;
     private TextView lihatlistmotorcust;
+    private List<AddBike> licenseList;
 
     @Override
     protected void onCreate (Bundle savedInstanceState) {
         super.onCreate (savedInstanceState);
         setContentView (R.layout.activity_input_antrian);
 
-        licensePlate = findViewById(R.id.tv_inputmotor_plat);
+        spinnerLicense = findViewById(R.id.spinner_license);
         washType = findViewById(R.id.txt_wash_type);
         btnSubmit = findViewById(R.id.btn_add_motor_queue);
         lihatlistmotorcust = findViewById (R.id.lbl_cekmotor);
@@ -60,6 +68,8 @@ public class InputAntrian extends AppCompatActivity {
                 submitQueue();
             }
         });
+
+        prepareData();
     }
 
     @Override
@@ -84,14 +94,8 @@ public class InputAntrian extends AppCompatActivity {
     }
 
     private void submitQueue() {
-        String txt_license = licensePlate.getText().toString();
+        String txt_license = licenseList.get(spinnerLicense.getSelectedItemPosition()).getLicensePlate();
         String txt_wash = washType.getSelectedItem().toString();
-
-        if(TextUtils.isEmpty(txt_license)) {
-            licensePlate.setError("Nomor plat motor wajib diisi");
-            licensePlate.requestFocus();
-            return;
-        }
 
         ProgressDialog dialog = new ProgressDialog(this);
         dialog.setCancelable(false);
@@ -129,6 +133,41 @@ public class InputAntrian extends AppCompatActivity {
             }
         });
 
+    }
+
+    private void prepareData() {
+        SessionManager session = new SessionManager(getApplicationContext());
+        Gson gson = new Gson();
+        Customer c = gson.fromJson(session.getString(SessionManager.Key.USER_DATA), Customer.class);
+        ApiCallInterface apiClient = ApiClient.getClient().create(ApiCallInterface.class);
+        Call<List<AddBike>> call = apiClient.getCustomerBikes(String.valueOf(c.getId()));
+
+        String[] colors = {};
+
+        call.enqueue(new Callback<List<AddBike>>() {
+            @Override
+            public void onResponse(Call<List<AddBike>> call, Response<List<AddBike>> response) {
+                licenseList = response.body();
+
+                for(int i = 0; i < licenseList.size(); i++) {
+                    colors[i] = licenseList.get(i).getLicensePlate();
+                }
+
+                ArrayAdapter<String> adapter = new ArrayAdapter<String>(
+                        InputAntrian.this,
+                        android.R.layout.simple_spinner_item,
+                        colors);
+
+                adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                spinnerLicense.setAdapter(adapter);
+                adapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onFailure(Call<List<AddBike>> call, Throwable t) {
+
+            }
+        });
     }
 
 }

@@ -4,6 +4,10 @@ import com.google.gson.annotations.SerializedName;
 
 public class AddBike {
 
+    @SerializedName("id")
+    private int id;
+    @SerializedName("customer_id")
+    private String customerId;
     @SerializedName("license_plate")
     private String licensePlate;
     @SerializedName("type_of_bike")
@@ -25,6 +29,22 @@ public class AddBike {
         this.typeOfBike = typeOfBike;
         this.sizeOfBike = sizeOfBike;
         this.customerName = customerName;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getCustomerId() {
+        return customerId;
+    }
+
+    public void setCustomerId(String customerId) {
+        this.customerId = customerId;
     }
 
     public int getAmountOfWash() {

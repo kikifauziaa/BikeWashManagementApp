@@ -73,4 +73,10 @@ public interface ApiCallInterface {
 
     @POST("carpetqueues/create")
     Call<String> addCarpetQueue(@Body AddCarpetQueue queue);
+
+    @POST("carpets/findbycustomer/{id}")
+    Call<List<AddCarpet>> getCustomerCarpets(@Path("id") String id);
+
+    @POST("bikes/findbycustomer/{id}")
+    Call<List<AddBike>> getCustomerBikes(@Path("id") String id);
 }
