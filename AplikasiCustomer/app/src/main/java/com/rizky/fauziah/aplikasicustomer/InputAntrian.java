@@ -142,21 +142,20 @@ public class InputAntrian extends AppCompatActivity {
         ApiCallInterface apiClient = ApiClient.getClient().create(ApiCallInterface.class);
         Call<List<AddBike>> call = apiClient.getCustomerBikes(String.valueOf(c.getId()));
 
-        String[] colors = {};
-
         call.enqueue(new Callback<List<AddBike>>() {
             @Override
             public void onResponse(Call<List<AddBike>> call, Response<List<AddBike>> response) {
                 licenseList = response.body();
+                String[] licenses = new String[licenseList.size()];
 
                 for(int i = 0; i < licenseList.size(); i++) {
-                    colors[i] = licenseList.get(i).getLicensePlate();
+                    licenses[i] = licenseList.get(i).getLicensePlate();
                 }
 
                 ArrayAdapter<String> adapter = new ArrayAdapter<String>(
                         InputAntrian.this,
                         android.R.layout.simple_spinner_item,
-                        colors);
+                        licenses);
 
                 adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                 spinnerLicense.setAdapter(adapter);

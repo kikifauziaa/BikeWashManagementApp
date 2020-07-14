@@ -147,12 +147,11 @@ public class InputAntrianKarpet extends AppCompatActivity {
         ApiCallInterface apiClient = ApiClient.getClient().create(ApiCallInterface.class);
         Call<List<AddCarpet>> call = apiClient.getCustomerCarpets(String.valueOf(c.getId()));
 
-        String[] colors = {};
-
         call.enqueue(new Callback<List<AddCarpet>>() {
             @Override
             public void onResponse(Call<List<AddCarpet>> call, Response<List<AddCarpet>> response) {
                 colorList = response.body();
+                String[] colors = new String[colorList.size()];
 
                 for(int i = 0; i < colorList.size(); i++) {
                     colors[i] = String.format("%d. %s, %s x %s",
