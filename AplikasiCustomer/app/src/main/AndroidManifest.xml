@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.rizky.fauziah.aplikasicustomer">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_logoapp"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_logoapp_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".KarpetCustomer"></activity>
+        <activity android:name=".MotorCustomer" />
+        <activity android:name=".activity.AddCarpetActivity" />
+        <activity android:name=".activity.AddBikeActivity" />
+        <activity android:name=".InputAntrianKarpet" />
+        <activity android:name=".InputRating" />
+        <activity android:name=".InputAntrian" />
+        <activity android:name=".register.Register" />
+        <activity android:name=".login.Login" />
+        <activity android:name=".notifikasi.Notifikasi" />
+        <activity android:name=".profil.Profil" />
+        <activity android:name=".historykarpet.HistoriKarpet" />
+        <activity android:name=".historymotor.HistoriMotor" />
+        <activity android:name=".MainActivity" />
+        <activity android:name=".antrian.Antrian">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

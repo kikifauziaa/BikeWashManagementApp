@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".InputRating">
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
+        android:text="Rating Kinerja Pegawai"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"></TextView>
+
+    <ImageView
+        android:id="@+id/rating_1"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="45dp"
+        android:src="@drawable/ic_bintangabu"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3"></ImageView>
+
+    <ImageView
+        android:id="@+id/rating_2"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="45dp"
+        android:src="@drawable/ic_bintangabu"
+        app:layout_constraintStart_toEndOf="@+id/rating_1"
+        app:layout_constraintTop_toBottomOf="@+id/textView3"></ImageView>
+
+    <ImageView
+        android:id="@+id/rating_3"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="45dp"
+        android:src="@drawable/ic_bintangabu"
+        app:layout_constraintStart_toEndOf="@+id/rating_2"
+        app:layout_constraintTop_toBottomOf="@+id/textView3"></ImageView>
+
+    <ImageView
+        android:id="@+id/rating_4"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="45dp"
+        android:src="@drawable/ic_bintangabu"
+        app:layout_constraintStart_toEndOf="@+id/rating_3"
+        app:layout_constraintTop_toBottomOf="@+id/textView3"></ImageView>
+
+    <ImageView
+        android:id="@+id/rating_5"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="45dp"
+        android:src="@drawable/ic_bintangabu"
+        app:layout_constraintStart_toEndOf="@+id/rating_4"
+        app:layout_constraintTop_toBottomOf="@+id/textView3"></ImageView>
+
+    <Button
+        android:id="@+id/btn_submit_rating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:background="@color/startGradientColor"
+        android:text="Kirim"
+        android:textColor="@color/otwputih"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rating_5"></Button>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

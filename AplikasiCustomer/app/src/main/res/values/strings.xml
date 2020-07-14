@@ -1,0 +1,41 @@
+<resources>
+    <string name="app_name">Aplikasi Customer</string>
+
+    <string-array name="type_motor">
+        <item>Select item</item>
+        <item>Matic</item>
+        <item>Bebek</item>
+        <item>Sport</item>
+    </string-array>
+
+    <string-array name="type_cuci">
+        <item>Select item</item>
+        <item>Standar</item>
+        <item>Silikon</item>
+    </string-array>
+
+    <string-array name="ukuran_motor">
+        <item>Select item</item>
+        <item>Sedang</item>
+        <item>Besar</item>
+    </string-array>
+
+    <string-array name="tipe_karpet">
+        <item>Select item</item>
+        <item>tipis</item>
+        <item>Sedang</item>
+        <item>Tebal</item>
+    </string-array>
+
+    <string-array name="jenis_cuci">
+        <item>Standar</item>
+    </string-array>
+
+    <string-array name="motor">
+        <item>Motor</item>
+    </string-array>
+
+    <string-array name="karpet">
+        <item>Karpet</item>
+    </string-array>
+</resources>

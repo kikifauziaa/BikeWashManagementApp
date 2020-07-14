@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="150dp">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="149dp"
+        android:background="#919bb0">
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/tv_notif_kalimatawal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:text="Dapatkan Diskon Sebesar"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tv_notif_diskon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="255dp"
+        android:layout_marginTop="20dp"
+        android:text=" 10% "
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tv_notif_kalimatakhir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="210dp"
+        android:layout_marginTop="20dp"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tv_notif_kode1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:layout_marginLeft="10dp"
+        android:textSize="16sp"
+        android:text="KODE DISKON :" />
+
+    <TextView
+        android:id="@+id/tv_notif_kode2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:layout_marginLeft="120dp"
+        android:textSize="16sp"
+        android:text="NYUCIANJAY" />
+
+    <TextView
+        android:id="@+id/tv_notifikasi_tanggal1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:layout_marginLeft="10dp"
+        android:textSize="14sp"
+        android:text="Berlaku sampai dengan" />
+
+    <TextView
+        android:id="@+id/tv_notifikasi_tanggal2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:layout_marginLeft="163dp"
+        android:textSize="14sp"
+        android:text="29 Feb 2019" />
+
+</androidx.cardview.widget.CardView>

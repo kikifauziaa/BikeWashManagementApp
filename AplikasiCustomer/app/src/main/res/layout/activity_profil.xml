@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".profil.Profil">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/hiasan"
+                android:layout_width="750dp"
+                android:layout_height="550dp"
+                android:layout_marginTop="-105dp"
+                android:src="@drawable/ic_profilhiasan"></ImageView>
+
+            <TextView
+                android:id="@+id/lbl_customer_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="74dp"
+                android:layout_marginTop="157dp"
+                android:layout_marginEnd="66dp"
+                android:gravity="center_horizontal"
+                android:text="Nama Anda"
+                android:textColor="@color/otwputih"
+                android:textSize="24sp"
+                android:textStyle="bold"></TextView>
+
+            <TextView
+                android:id="@+id/lbl_customer_deposit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/textView9"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="-7dp"
+                android:layout_marginEnd="37dp"
+                android:layout_marginBottom="164dp"
+                android:text="Rp. 3000,-"
+                android:textColor="#006bd4"
+                android:textSize="24sp"
+                android:textStyle="bold"></TextView>
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/lbl_customer_email"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="42dp"
+                android:text="Saldo Anda :"
+                android:textColor="#2e3440"
+                android:textSize="20sp"
+                android:textStyle="bold"></TextView>
+
+            <TextView
+                android:id="@+id/lbl_customer_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textView6"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="15dp"
+                android:text="email saya adalah"
+                android:textColor="#2e3440"
+                android:textSize="14sp"
+                android:textStyle="normal"></TextView>
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/lbl_customer_address"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="35dp"
+                android:layout_marginTop="20dp"
+                android:text="Email"
+                android:textColor="#2e3440"
+                android:textSize="20sp"
+                android:textStyle="bold"></TextView>
+
+            <TextView
+                android:id="@+id/lbl_customer_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textView2"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="15dp"
+                android:text="Alamat saya di rumah"
+                android:textColor="#2e3440"
+                android:textSize="14sp"
+                android:textStyle="normal"></TextView>
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lbl_customer_name"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="35dp"
+                android:layout_marginTop="104dp"
+                android:layout_marginEnd="-36dp"
+                android:text="Alamat"
+                android:textColor="#2B2E35"
+                android:textSize="20sp"
+                android:textStyle="bold"></TextView>
+        </RelativeLayout>
+    </ScrollView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomnavigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="0dp"
+        android:background="@color/otwputih"
+        app:itemIconTint="@drawable/color_state"
+        app:itemTextColor="@drawable/color_state"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:menu="@menu/menu_bottom" />
+
+</RelativeLayout>

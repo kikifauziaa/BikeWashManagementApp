@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:id="@+id/card_motorcust"
+    android:layout_width="match_parent"
+    android:layout_height="110dp">
+    <FrameLayout
+        android:layout_width="5dp"
+        android:layout_height="match_parent"
+        android:background="#006bd4">
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="109dp"
+        android:background="#919bb0">
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/plat_cust"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="10dp"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:text="N567UI" />
+
+    <TextView
+        android:id="@+id/jnsmotor_cust"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="10dp"
+        android:textSize="14sp"
+        android:text="Matic" />
+
+    <TextView
+        android:id="@+id/jumlahmotor_cust"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:layout_marginLeft="10dp"
+        android:textSize="14sp"
+        android:text="2x cuci" />
+
+
+</androidx.cardview.widget.CardView>

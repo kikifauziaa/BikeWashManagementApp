@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/card_view"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    card_view:cardCornerRadius="4dp"
+    android:layout_marginLeft="5dp"
+    android:layout_marginTop="4dp"
+    android:layout_marginRight="5dp"
+    android:layout_marginBottom="4dp"
+    android:clickable="true"
+    android:background="#dddddd"
+    android:foreground="?android:attr/selectableItemBackground">
+
+    <FrameLayout
+        android:layout_width="2dp"
+        android:layout_height="match_parent"
+        android:background="#228be6">
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="149dp"
+        android:background="#919bb0">
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/tv_motor_namabarang"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="10dp"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:text="N 1234 RT" />
+
+    <TextView
+        android:id="@+id/tv_motor_jeniscuci"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="10dp"
+        android:textSize="14sp"
+        android:text="Cuci Salju" />
+
+    <TextView
+        android:id="@+id/tv_motor_tglcuci"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:layout_marginLeft="10dp"
+        android:textSize="14sp"
+        android:text="16 feb 2020" />
+
+    <TextView
+        android:id="@+id/tv_motor_namapegawai"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:layout_marginLeft="10dp"
+        android:textSize="14sp"
+        android:text="Jamed" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:layout_marginLeft="10dp"
+        android:src="@drawable/bintang_unyu">
+    </ImageView>
+
+    <TextView
+        android:id="@+id/tv_motor_rating"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:layout_marginLeft="40dp"
+        android:textSize="14sp"
+        android:text="4,5" />
+
+    <Button
+        android:id="@+id/btn_submit_rating"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="45dp"
+        android:layout_marginLeft="260dp"
+        android:textSize="10.5sp"
+        android:textColor="#fff"
+        android:background="#039af0"
+        android:text="Beri Rating"/>
+
+
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_motor"
+        android:icon="@drawable/ic_motorabu"
+        android:title="Histori Motor">
+    </item>
+    <item
+        android:id="@+id/action_karpet"
+        android:icon="@drawable/ic_karpetabu"
+        android:title="Histori Karpet">
+    </item>
+    <item
+        android:id="@+id/action_antri"
+        android:icon="@drawable/ic_antriabu"
+        android:title="Antrian">
+    </item>
+    <item
+        android:id="@+id/action_profil"
+        android:icon="@drawable/profil_abu"
+        android:title="Profil">
+    </item>
+</menu>

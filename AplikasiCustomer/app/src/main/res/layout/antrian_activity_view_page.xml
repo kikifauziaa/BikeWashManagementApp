@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".antrian.Antrian">
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tab_antrian"
+        android:layout_width="match_parent"
+        android:background="@color/colorPrimary"
+        app:tabIndicatorColor="@color/otwputih"
+        app:tabIndicatorHeight="3dp"
+        app:tabTextColor="@color/otwputih"
+        android:layout_height="wrap_content"/>
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/view_pager_antria"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomnavigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/otwputih"
+        app:menu="@menu/menu_bottom"
+        app:itemTextColor="@drawable/color_state"
+        app:itemIconTint="@drawable/color_state"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</LinearLayout>

@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_background"
+    tools:context=".register.Register">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dp">
+
+            <TextView
+                android:id="@+id/lbl_title_register"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="40dp"
+                android:layout_marginEnd="142dp"
+                android:text="Registrasi"
+                android:textColor="@color/otwputih"
+                android:textSize="26sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/lbl_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="5"
+                android:textSize="14sp"
+                android:layout_marginTop="100dp"
+                android:layout_marginLeft="80dp"
+                android:text="Nama Lengkap"
+                android:textStyle="bold"
+                android:textColor="@color/otwputih"
+                />
+
+            <EditText
+                android:id="@+id/txt_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="12"
+                android:backgroundTint="@color/otwputih"
+                android:textCursorDrawable="@color/otwputih"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="120dp"
+                android:inputType="text"
+                android:maxLines="1" />
+
+            <TextView
+                android:id="@+id/lbl_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="5"
+                android:textSize="14sp"
+                android:layout_marginTop="180dp"
+                android:layout_marginLeft="80dp"
+                android:text="Alamat"
+                android:textStyle="bold"
+                android:textColor="@color/otwputih"
+                />
+
+            <EditText
+                android:id="@+id/txt_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="12"
+                android:layout_centerHorizontal="true"
+                android:backgroundTint="@color/otwputih"
+                android:textCursorDrawable="@color/otwputih"
+                android:layout_marginTop="200dp"
+                android:inputType="text"
+                android:maxLines="5" />
+
+            <TextView
+                android:id="@+id/lbl_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="5"
+                android:textSize="14sp"
+                android:layout_marginTop="260dp"
+                android:layout_marginLeft="80dp"
+                android:text="Nomor Telepon"
+                android:textStyle="bold"
+                android:textColor="@color/otwputih"
+                />
+
+            <EditText
+                android:id="@+id/txt_phone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="12"
+                android:layout_centerHorizontal="true"
+                android:backgroundTint="@color/otwputih"
+                android:textCursorDrawable="@color/otwputih"
+                android:layout_marginTop="280dp"
+                android:inputType="phone"
+                android:maxLines="1" />
+
+
+            <TextView
+                android:id="@+id/lbl_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="5"
+                android:textSize="14sp"
+                android:layout_marginTop="340dp"
+                android:layout_marginLeft="80dp"
+                android:text="Email"
+                android:textStyle="bold"
+                android:textColor="@color/otwputih"
+                />
+
+            <EditText
+                android:id="@+id/txt_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="12"
+                android:layout_centerHorizontal="true"
+                android:backgroundTint="@color/otwputih"
+                android:textCursorDrawable="@color/otwputih"
+                android:layout_marginTop="360dp"
+                android:inputType="textEmailAddress"
+                android:maxLines="1" />
+
+            <TextView
+                android:id="@+id/lbl_username"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="5"
+                android:textSize="14sp"
+                android:layout_marginTop="420dp"
+                android:layout_marginLeft="80dp"
+                android:text="Username"
+                android:textStyle="bold"
+                android:textColor="@color/otwputih"
+                />
+
+            <EditText
+                android:id="@+id/txt_username"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="12"
+                android:layout_centerHorizontal="true"
+                android:backgroundTint="@color/otwputih"
+                android:textCursorDrawable="@color/otwputih"
+                android:layout_marginTop="440dp"
+                android:inputType="text"
+                android:maxLines="1" />
+
+            <TextView
+                android:id="@+id/lbl_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="80dp"
+                android:layout_marginTop="500dp"
+                android:layout_weight="5"
+                android:fontFamily="monospace"
+                android:text="Password"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="@color/otwputih"/>
+
+            <EditText
+                android:id="@+id/txt_password"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="12"
+                android:layout_centerHorizontal="true"
+                android:backgroundTint="@color/otwputih"
+                android:textCursorDrawable="@color/otwputih"
+                android:inputType="textPassword"
+                android:layout_marginTop="520dp"
+                android:maxLines="1"
+                android:imeOptions="actionGo"/>
+
+            <Button
+                android:id="@+id/btn_register"
+                android:layout_width="250dp"
+                android:layout_height="50dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="580dp"
+                android:text="Daftar"
+                android:background="#ffffff"
+                android:textColor="@color/endGradientColor"
+                />
+        </RelativeLayout>
+
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

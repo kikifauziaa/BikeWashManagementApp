@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#29abe2</color>
+    <color name="colorPrimaryDark">#29abe2</color>
+    <color name="colorAccent">#29abe2</color>
+    <color name="startGradientColor">#29abe2</color>
+    <color name="endGradientColor">#006bd4</color>
+    <color name="otwputih">#FEFCFF</color>
+    <color name="abu">#999999</color>
+</resources>
