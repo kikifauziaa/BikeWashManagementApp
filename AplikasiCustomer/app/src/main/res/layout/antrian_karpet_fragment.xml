@@ -18,13 +18,18 @@
         android:backgroundTint="@color/colorPrimary"
         app:srcCompat="@android:drawable/ic_menu_add" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/list_antrian_karpet"
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:id="@+id/carpet_swipe_refresh">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/list_antrian_karpet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
